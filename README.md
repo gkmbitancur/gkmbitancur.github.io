@@ -1,48 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>3D Animation Manifesto</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minimalist Manifesto</title>
   <style>
-    body { margin: 0; overflow: hidden; }
-    canvas { display: block; }
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Fullscreen Black Background */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #000;
+      margin: 0;
+    }
+
+    /* Centered Text Container */
+    #text-container {
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 
+                   "Helvetica Neue", Arial, sans-serif;
+      font-size: 2rem;
+      text-align: center;
+      opacity: 0;           /* Start invisible */
+      transition: opacity 1s ease; /* Fade transition */
+      max-width: 80%;
+    }
+
+    /* Fade-in Class: toggled via JS */
+    .fade-in {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
-  <!-- Three.js from CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Container for Manifesto Text -->
+  <div id="text-container"></div>
+
   <script>
-    // Create the scene, camera, and renderer
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    // Array of lines to display
+    const lines = [
+      "Gusto ko red na C2",
+      "At yung ayaw ko, green na C2",
+      "Kasi iba, kakaiba",
+      "Iba yung lasa (nakakapukinangina)",
+      "Fiction for the New Millennium.",
+      "Ayaw ko yung lasa ng C2 na kulay green",
+      "Ayos lang naman yung lasa ng kulay dilaw",
+      "Nung tinikman ko yung color green",
+      "Nung tinikman ko yung color green",
+      "'Yoko na ulitin",
+      "Pag bibili ako sa labas",
+      "Alam ko na yung sasabihin",
+      "Ate, pabili nga po C2 na red",
+      "Wala nang red, green na lang",
+      "Hindi pwede yan",
+      "Ayaw kong uminom nyan",
+      "Gusto ko yung red na C2.",
+      "Sa akin, sa'kin ibigay",
+      "(red) Na C2 sa akin",
+      "Sa akin ibigay",
+      "(red) Na C2 sa akin",
+      "Sa akin ibigay",
+      "Thank you",
+      "Sir Toffer"
+    ];
 
-    // Create a cube with a simple geometry and a colorful material
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshNormalMaterial();
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
+    // Timing Configuration (milliseconds)
+    const fadeDuration = 1000;   // 1 second fade in/out
+    const holdDuration = 1500;   // 1.5 seconds fully visible
+    const totalDuration = fadeDuration + holdDuration + fadeDuration; 
+    // => 1 + 1.5 + 1 = 3.5 seconds per line
 
-    // Position the camera so the cube is visible
-    camera.position.z = 5;
+    let currentIndex = 0;
+    const textContainer = document.getElementById('text-container');
 
-    // Animation loop: rotate the cube and render the scene
-    function animate() {
-      requestAnimationFrame(animate);
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
-      renderer.render(scene, camera);
+    // Main function to display lines in sequence
+    function displayLine(index) {
+      // Set the text
+      textContainer.textContent = lines[index];
+      // Fade in
+      textContainer.classList.add('fade-in');
+
+      // After fadeDuration + holdDuration, start fade out
+      setTimeout(() => {
+        textContainer.classList.remove('fade-in');
+      }, fadeDuration + holdDuration);
+
+      // After totalDuration, move to next line
+      setTimeout(() => {
+        currentIndex++;
+        // If we've reached the end, loop back to start
+        if (currentIndex >= lines.length) {
+          currentIndex = 0;
+        }
+        displayLine(currentIndex);
+      }, totalDuration);
     }
-    animate();
 
-    // Adjust camera and renderer on window resize
-    window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    });
+    // Start the cycle
+    displayLine(currentIndex);
   </script>
 </body>
 </html>
