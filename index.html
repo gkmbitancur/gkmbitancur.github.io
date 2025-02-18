@@ -40,7 +40,8 @@
     #particleCanvas {
       position: absolute;
       top: 0; left: 0;
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       z-index: 4;
       pointer-events: none;
     }
@@ -84,7 +85,7 @@
     /* EULOGIZING: DAVID & WENRIK                                   */
     /* ============================================================= */
 
-    /* ---------- David (Plain White Play Button) ---------- */
+    /* ---------- 3. DAVID: Plain White Play Button (200×200) ---------- */
     #animation-david {
       width: 200px; height: 200px;
       margin: 0 auto;
@@ -114,7 +115,7 @@
       50% { opacity: 0.5; }
     }
 
-    /* ---------- Wenrik (Pen Blueprint) ---------- */
+    /* ---------- 4. WENRIK: Pen Blueprint Animation (200×200) ---------- */
     #animation-wenrik {
       position: relative;
       width: 200px; height: 200px;
@@ -146,10 +147,10 @@
     }
 
     /* ============================================================= */
-    /* SOLVING: KEVIN & LK                                          */
+    /* SOLVING: KEVIN & LORENZO DUMALAG                            */
     /* ============================================================= */
 
-    /* ---------- Kevin (Fissure) ---------- */
+    /* ---------- 5. KEVIN: Fissure Grows then Repairs (200×200) ---------- */
     #animation-kevin {
       position: relative;
       width: 200px; height: 200px;
@@ -171,7 +172,8 @@
       100% { width: 2px; height: 2px; opacity: 1; }
     }
 
-    /* ---------- LK (Treasure Map) ---------- */
+    /* ---------- 6. LORENZO DUMALAG: Treasure Map (Replacing LK) ---------- */
+    /* (This is the new text for our second solving testimony) */
     #animation-lk {
       width: 200px; height: 200px;
       margin: 0 auto;
@@ -202,7 +204,7 @@
     /* GENERATING: JIREH & GABE                                     */
     /* ============================================================= */
 
-    /* ---------- Jireh (White Cone of Light) ---------- */
+    /* ---------- 7. JIREH: White Cone of Light (200×200) ---------- */
     #animation-jireh {
       position: relative;
       width: 200px; height: 200px;
@@ -225,7 +227,7 @@
       50%      { opacity: 0.8; }
     }
 
-    /* ---------- Gabe (Rotating Cube) ---------- */
+    /* ---------- 8. GABE: Rotating Cube (200×200) ---------- */
     #animation-gabe {
       position: relative;
       width: 200px; height: 200px;
@@ -256,7 +258,7 @@
     .bottom { transform: rotateX(-90deg) translateZ(100px); }
 
     /* ============================================================= */
-    /* Final Text (FICTION + 4 Lines)                               */
+    /* Final "FICTION" Text (4 Lines)                               */
     /* ============================================================= */
     #final-fiction-text {
       margin-top: 20px;
@@ -279,20 +281,20 @@
 
   <!-- Testimony Container -->
   <div id="testimony-container">
-
-    <!-- 1. David (Eulogizing) -->
+    
+    <!-- EULOGIZING -->
+    <!-- 1. DAVID -->
     <div class="testimony" id="testimony-david">
       <div id="animation-david">
         <div id="play-button"></div>
       </div>
       <div class="testimony-text">
-        <strong>David (World-Eulogizing):</strong>
-        “If fiction preserves the essence that the future might never grasp, then we must protect our present.
-        Our stories, igniting revolutions of thought, are the genesis of change—safeguarding life so it may be lived, not merely remembered.”
+        <strong>David (World-Eulogizing):</strong><br>
+        “If fiction preserves the essence that the future might never grasp, then we must protect our present. Safeguarding life so it may also be lived, and not merely remembered.”
       </div>
     </div>
 
-    <!-- 2. Wenrik (Eulogizing) -->
+    <!-- 2. WENRIK -->
     <div class="testimony" id="testimony-wenrik">
       <div id="animation-wenrik">
         <svg width="200" height="200">
@@ -301,26 +303,27 @@
         <div id="pen"></div>
       </div>
       <div class="testimony-text">
-        <strong>Wenrik (World-Eulogizing):</strong>
-        “We write not to mirror what is, but to shape what could be.
+        <strong>Wenrik (World-Eulogizing):</strong><br>
+        "We write not to mirror what is, but to shape what could be.
         Our pen becomes a blueprint—mourning the lost, mending the broken, inventing worlds yet to exist.”
       </div>
     </div>
 
-    <!-- 3. Kevin (Solving) -->
+    <!-- SOLVING -->
+    <!-- 3. KEVIN -->
     <div class="testimony" id="testimony-kevin">
       <div id="animation-kevin">
         <div id="fissure"></div>
       </div>
       <div class="testimony-text">
-        <strong>Kevin (World-Solving):</strong>
+        <strong>Kevin (World-Solving):</strong><br>
         “Amid mounting global challenges, fiction is our tool for change.
         We must do more than voice the problems—we build the solutions, fix the fractures, and mend our world with every narrative we craft.”
       </div>
     </div>
 
-    <!-- 4. LK (Solving) -->
-    <div class="testimony" id="testimony-lk">
+    <!-- 4. LORENZO DUMALAG -->
+    <div class="testimony" id="testimony-lorenzo">
       <div id="animation-lk">
         <svg viewBox="0 0 200 200">
           <path class="map-line line1" d="M20,180 L80,120" />
@@ -330,24 +333,24 @@
         </svg>
       </div>
       <div class="testimony-text">
-        <strong>LK (World-Solving):</strong>
-        “In the uncertainty of what lies ahead, we spin fictions that cradle our tentative answers.
-        We sculpt our doubts into narratives, crafting fragile yet hopeful maps of a future unknown.”
+        <strong>Lorenzo Dumalag (World-Solving):</strong><br>
+        "In the face of an uncertain new millennium, fiction becomes a vessel for our collective anxieties and aspirations, transforming doubt into narrative and speculation into possibility, as we craft fragile yet hopeful maps to navigate an unpredictable future."
       </div>
     </div>
 
-    <!-- 5. Jireh (Generating) -->
+    <!-- GENERATING -->
+    <!-- 5. JIREH -->
     <div class="testimony" id="testimony-jireh">
       <div id="animation-jireh">
         <div id="cone-of-light"></div>
       </div>
       <div class="testimony-text">
-        <strong>Jireh (World-Generating):</strong>
-        “Life imitates art far more than art imitates life”, why not create fiction that our future can imitate?”
+        <strong>Jireh (World-Generating):</strong><br>
+        “life imitates art far more than art imitates life”, why not create fiction that our future can imitate?"
       </div>
     </div>
 
-    <!-- 6. Gabe (Generating) -->
+    <!-- 6. GABE -->
     <div class="testimony" id="testimony-gabe">
       <div id="animation-gabe">
         <div id="cube">
@@ -360,14 +363,12 @@
         </div>
       </div>
       <div class="testimony-text">
-        <strong>Gabe (World-Generating):</strong>
-        “In the alchemy of narrative, fiction transcends reflection to become an ethical crucible—transforming the raw despair of our present
-        into the luminous possibility of tomorrow. Every story is both mirror and forge, challenging inertia and sparking revolutions of thought—
-        a sacred duty to transmute our reality into a world reborn.”
+        <strong>Gabe (World-Generating):</strong><br>
+        “In the crucible of story, fiction forges tomorrow from today’s despair. Every tale is both reflection and weapon—daring us to imagine beyond all that confines us.”
       </div>
     </div>
 
-    <!-- 7. Final "Fiction" Text (Replacing 'Together' Conclusion) -->
+    <!-- FINAL TEXT -->
     <div class="testimony" id="testimony-conclusion">
       <div id="final-fiction-text">
         <div class="title">FICTION</div>
@@ -376,6 +377,7 @@
         <div>The Architect of Worlds to Come</div>
       </div>
     </div>
+
   </div>
 
   <script>
